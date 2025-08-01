@@ -1,3 +1,4 @@
+// 导出 Phrase 构造函数，其他文件可以通过 require 引入并使用它
 module.exports = Phrase;
 
 // 定义的反转函数：反转一个字符串
@@ -28,7 +29,12 @@ function Phrase(content) {
         // 使用自定义的方法
         //return this.processedContent() === reverse(this.processedContent());
         // 使用改变原生的方法
-        return this.processedContent() === this.processedContent().reverse();
+        if(this.processedContent()) {
+            return this.processedContent() === this.processedContent().reverse();
+        }
+        else {
+            return false; // 如果为空就返回错误
+        }
     }
 }
 

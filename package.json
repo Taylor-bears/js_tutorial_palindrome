@@ -1,6 +1,6 @@
 {
-  "name": "js_tutorial_palindrome",
-  "version": "1.0.0",
+  "name": "js_tutorial_taylorbear_palindrome",
+  "version": "1.0.1",
   "description": "Palindrome detector",
   "main": "index.js",
   "scripts": {

@@ -1,6 +1,5 @@
 let assert = require("assert");
 let Phrase = require("../index.js")
-const plainPalindrome = require("../index");
 
 describe("Phrase", function() {
     // 测试回文功能
@@ -20,6 +19,10 @@ describe("Phrase", function() {
         it("should return true for a palindrome with punctuation", function() {
             let punctuationPalindrome = new Phrase("Madam, I'm Adam");
             assert(punctuationPalindrome.palindrome());
+        })
+        it("should return false for an empty string", function() {
+            let emptyPhrase = new Phrase("");
+            assert(!emptyPhrase.palindrome());
         })
     });
 
