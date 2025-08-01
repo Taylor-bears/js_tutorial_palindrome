@@ -1,3 +1,5 @@
+module.exports = Phrase;
+
 // 定义的反转函数：反转一个字符串
 function reverse(string) {
     return Array.from(string).reverse().join("");
@@ -11,9 +13,14 @@ String.prototype.reverse = function() {
 function Phrase(content) {
     this.content = content;
 
-    // 回文测试处理的内容
+    // 回文测试处理的内容（只返回字母流）
+    this.letters = function letters() {
+        return (this.content.match(/[a-z]/gi)||[]).join("");
+    }
+
+    // 回文测试处理的内容（只返回小写）
     this.processedContent = function processedContent() {
-        return this.content.toLowerCase();
+        return this.letters().toLowerCase();
     }
 
     // 判断回文
